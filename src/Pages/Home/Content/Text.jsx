@@ -10,6 +10,8 @@ const Text = () => {
 
     // Handle image generation
     const handleGenerateImage = async () => {
+        console.log("Sending prompt:", text);
+
         if (!text) {
             alert("No text available for image generation.");
             return;
@@ -17,13 +19,15 @@ const Text = () => {
 
         setIsLoading(true);
         try {
-            // Call your backend API to generate the image
-            const response = await axios.post("http://localhost:5000/generate-image", {
-                text: text,
+            // Call backend API to generate the image
+            const response = await axios.post("http://localhost:5000/generate", {
+                prompt: text, //send the text to backend 
             });
+            console.log("Image URL:", response.data.imageUrl);
 
             //  backend returns the URL of the generated image
             setGeneratedImage(response.data.imageUrl);
+
         } catch (error) {
             console.error("Error generating image:", error);
             alert("Failed to generate image.");
