@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import Text from "./Text";
+import backgroundImage from './img/img1.jpg';
 // import { useNavigate } from "react-router-dom";
 
 
@@ -56,7 +57,13 @@ const Content = () => {
 
     return (
 
-        <div className="flex justify-center items-center min-h-screen bg-purple-200">
+        <div className="flex justify-center items-center min-h-screen "
+            style={{
+                backgroundImage: `url(${backgroundImage})`, // Use the imported image
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            }}
+        >
             <div className="card w-full sm:w-96 shadow-xl bg-white p-6">
                 <h2 className="text-2xl font-semibold text-center mb-4 text-gray-800">Upload Video</h2>
                 <div className="flex flex-col items-center">
