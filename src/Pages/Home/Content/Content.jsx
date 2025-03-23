@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import Text from "./Text";
 // import { useNavigate } from "react-router-dom";
 
 
@@ -94,12 +95,8 @@ const Content = () => {
                             Change video
                         </button>
                     )}
-                    {transcription && (
-                        <div className="mt-6 p-4 bg-gray-700 rounded-lg w-full">
-                            <h2 className="text-lg font-bold">Transcription:</h2>
-                            <p className="mt-2">{transcription}</p>
-                        </div>
-                    )}
+                    {transcription && <Text transcription={transcription} />}
+
                 </div>
             </div>
         </div>
