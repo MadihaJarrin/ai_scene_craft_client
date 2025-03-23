@@ -6,10 +6,13 @@ const Text = () => {
 
     const [text, setText] = useState('');
     const [generatedImage, setGeneratedImage] = useState('');
+
+
     const [isLoading, setIsLoading] = useState(false);
 
     // Handle image generation
     const handleGenerateImage = async () => {
+
         console.log("Sending prompt:", text);
 
         if (!text) {
@@ -73,7 +76,12 @@ const Text = () => {
                 </button>
                 {generatedImage && (
                     <div className="mt-6">
-                        <h3 className="text-lg font-semibold">Generated Image</h3>
+                        <button
+                            onClick={handleGenerateImage}
+                            className="btn btn-primary px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600"
+                        >
+                            Generate Images
+                        </button>
                         <img
                             src={generatedImage}
                             alt="Generated"

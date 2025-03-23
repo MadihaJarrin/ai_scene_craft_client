@@ -3,11 +3,17 @@ import backgroundImg from './img/img10.jpg';
 
 
 const Generate = () => {
+
+
+    // Simulate image generation (replace with your logic)
+
     const location = useLocation();
     const { images } = location.state || { images: [] }; // Get images from state
     const navigate = useNavigate();
 
     return (
+
+
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6"
             style={{
                 backgroundImage: `url(${backgroundImg})`,
