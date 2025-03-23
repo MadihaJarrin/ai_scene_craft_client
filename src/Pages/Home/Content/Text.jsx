@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import backgroundImg from './img/img1.jpg';
+import backgroundImg from './img/cartoon-ai-robot-scene.jpg';
 import axios from 'axios';
 
 const Text = () => {
@@ -44,14 +44,14 @@ const Text = () => {
             }}
         >
             <div
-                className="w-full sm:w-96 shadow-xl bg-white p-6 opacity-90"
+                className="w-full sm:w-96 shadow-xl bg-white p-6 opacity-98 border-blue-900 border-2"
                 style={{ borderRadius: "10px" }}
             >
                 <h2 className="text-2xl font-semibold text-center mb-4 text-orange-800 ">
                     Extracted Prompt
                 </h2>
                 <p className="text-lg text-gray-700 mb-4">
-                    This is the extracted text from the audio. You can generate an image based on the text.
+                    This is the extracted text from the audio. You can generate an image based on the prompt.
                 </p>
                 <textarea
                     className="w-full p-2 mb-4 border-2 border-gray-300 rounded-md"

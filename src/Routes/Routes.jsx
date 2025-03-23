@@ -4,6 +4,7 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Text from "../Pages/Home/Content/Text";
+import Generate from "../Pages/Home/Content/Generate";
 
 export const router = createBrowserRouter([
     {
@@ -15,8 +16,12 @@ export const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: "/text",
+                path: "/prompt",
                 element: <Text></Text>,
+            },
+            {
+                path: "/generateImg",
+                element: <Generate></Generate>,
             }
         ]
     },

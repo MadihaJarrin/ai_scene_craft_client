@@ -49,7 +49,7 @@ const Content = () => {
             setTranscription(response.data.text);
 
             // Navigate to the text page after successful conversion
-            navigate("/text");
+            navigate("/prompt");
 
         } catch (error) {
             console.error("Error:", error);
