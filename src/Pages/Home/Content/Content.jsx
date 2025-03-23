@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import Text from "./Text";
 import backgroundImage from './img/img1.jpg';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Content = () => {
@@ -12,7 +12,7 @@ const Content = () => {
     const [file, setFile] = useState(null);
     const [transcription, setTranscription] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
@@ -47,6 +47,10 @@ const Content = () => {
 
             console.log("Backend response:", response); // Log the response from the backend
             setTranscription(response.data.text);
+
+            // Navigate to the text page after successful conversion
+            navigate("/text");
+
         } catch (error) {
             console.error("Error:", error);
             alert("Failed to convert video to text.");
@@ -75,7 +79,7 @@ const Content = () => {
                     />
                     {video && (
                         <div className="mt-6 w-full max-w-7xl relative">
-                            <h3 className="text-lg font-semibold text-center mb-4">Video Preview</h3>
+                            <h3 className="text-lg text-red-800 font-semibold text-center mb-4">Video Preview</h3>
                             <div className="aspect-w-16 aspect-h-9">
                                 <video
                                     controls

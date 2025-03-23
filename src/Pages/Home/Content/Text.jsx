@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const Text = () => {
 
-    const [text, setText] = useState(''); // The text you received from the audio transcription
-    const [generatedImage, setGeneratedImage] = useState(''); // The generated image URL
+    const [text, setText] = useState('');
+    const [generatedImage, setGeneratedImage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
     // Handle image generation
@@ -22,7 +22,7 @@ const Text = () => {
                 text: text,
             });
 
-            // Assuming the backend returns the URL of the generated image
+            //  backend returns the URL of the generated image
             setGeneratedImage(response.data.imageUrl);
         } catch (error) {
             console.error("Error generating image:", error);
@@ -31,6 +31,7 @@ const Text = () => {
             setIsLoading(false);
         }
     };
+
     return (
         <div
             className="flex justify-center items-center min-h-screen"
@@ -38,16 +39,16 @@ const Text = () => {
                 backgroundImage: `url(${backgroundImg})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                color: "white", // Ensures text is readable over the image
+                color: "white",
                 padding: "20px",
             }}
         >
             <div
-                className="w-full sm:w-96 shadow-xl bg-white p-6 opacity-90" // Adds opacity to background for better text visibility
+                className="w-full sm:w-96 shadow-xl bg-white p-6 opacity-90"
                 style={{ borderRadius: "10px" }}
             >
-                <h2 className="text-2xl font-semibold text-center mb-4 text-gray-800">
-                    Extracted Audio From Video
+                <h2 className="text-2xl font-semibold text-center mb-4 text-orange-800 ">
+                    Extracted Prompt
                 </h2>
                 <p className="text-lg text-gray-700 mb-4">
                     This is the extracted text from the audio. You can generate an image based on the text.
